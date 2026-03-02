@@ -8,7 +8,7 @@ pomiarów mostków H
 analizy sygnałów na potencjale pływającym
 pomiarów różnicowych bez uziemiania badanego obwodu
 
-Architektura:
+# Architektura:
     Oddzielenie galwaniczne od badanego układu
     Wejście Symetryczne IN+ / IN−
     Rezystorowy dzielnik wysokiego napięcia
@@ -17,14 +17,14 @@ Architektura:
     Stopień różnicowy Wzmacniacz operacyjny (SMD)
     Precyzyjne rezystory dopasowujące
     Kompensacja częstotliwościowa
-Zasilanie:
+# Zasilanie:
   Akumulator Li-Ion 3.7V
   Konwersja do ±5V (DC/DC)
   Ładowanie przez USB
   Bezpiecznik wejściowy
   Wbudowana przetwornica generująca napięcie symetryczne
 
-Wyjście
+# Wyjście
   BNC
   Masa testowa (TPGND)
 
