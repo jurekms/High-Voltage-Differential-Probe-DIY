@@ -37,6 +37,7 @@
 
 ## TO DO
     Wymiana czterech pojedynczych rezystoró na drabinkę firmy VISAY (problem z zakupem) i skalibrowanie sondy 
+    Wykonanie obudowy w twchnologi druku 3D pokrytej wewnątrz warstwą ekranującą
 
 ![01_R](https://github.com/user-attachments/assets/c2d3f26f-5859-4539-a1ce-6709016dfe67)
 
