@@ -4,12 +4,37 @@ Relacja z budowy sondy różnicowej
 Projekt przeznaczony do:
 
 pomiarów w przetwornicach impulsowych (SMPS)
-
 pomiarów mostków H
-
 analizy sygnałów na potencjale pływającym
-
 pomiarów różnicowych bez uziemiania badanego obwodu
+
+Architektura:
+    Oddzielenie galwaniczne od badanego układu
+    Wejście Symetryczne IN+ / IN−
+    Rezystorowy dzielnik wysokiego napięcia
+    Ochrona diodowa
+    Filtr RC kompensacyjny
+    Stopień różnicowy Wzmacniacz operacyjny (SMD)
+    Precyzyjne rezystory dopasowujące
+    Kompensacja częstotliwościowa
+Zasilanie:
+  Akumulator Li-Ion 3.7V
+  Konwersja do ±5V (DC/DC)
+  Ładowanie przez USB
+  Bezpiecznik wejściowy
+  Wbudowana przetwornica generująca napięcie symetryczne
+
+Wyjście
+  BNC
+  Masa testowa (TPGND)
+
+Na ostatnim foto charakterystyka częstotliwościowa. Pomiary wykonane przy użyciu Digilent Discovery 3.
+Zakres sweep: Start: 1 Hz Stop: 10 MHz 101 punktów Skala logarytmiczna
+Wynik:
+Wzmocnienie nominalne ≈ -20 dB
+Charakterystyka płaska do ~100 kHz
+Spadek w okolicach kilku MHz
+Przesunięcie fazowe rośnie powyżej ~1 MHz
 
 ![01_R](https://github.com/user-attachments/assets/c2d3f26f-5859-4539-a1ce-6709016dfe67)
 
