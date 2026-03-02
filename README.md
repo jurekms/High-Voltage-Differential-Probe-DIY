@@ -1,43 +1,186 @@
-# Relacja z budowy  wysokonapięciowej sondy różnicowej
-## High-Voltage-Differential-Probe
+# High-Voltage Differential Probe (DIY)
 
-### Sonda przeznaczona do pomiarów w przetwornicach impulsowych (SMPS), pomiarów mostków H, analizy sygnałów na potencjale pływającym, pomiarów różnicowych bez uziemiania badanego obwodu, pomiarów torów mocy audio.
+DIY High-Voltage Differential Probe designed for safe measurement of floating and high-potential signals using a standard oscilloscope.
 
-## Architektura:
+This project provides a battery-powered, fully isolated differential probe suitable for SMPS debugging, half/full-bridge analysis, and high-side measurements.
 
-    Oddzielenie galwaniczne od badanego układu
-    Wejście Symetryczne IN+ / IN−
-    Rezystorowy dzielnik wysokiego napięcia
-    Ochrona diodowa
-    Filtr RC kompensacyjny
-    Stopień różnicowy Wzmacniacz operacyjny (SMD)
-    Precyzyjne rezystory dopasowujące
-    Kompensacja częstotliwościowa
-## Zasilanie:
-    Akumulator Li-Ion 3.7V
-    Konwersja do ±5V (DC/DC)
-    Ładowanie przez USB
-    Bezpiecznik wejściowy
-    Wbudowana przetwornica generująca napięcie symetryczne
+---
 
-## Wyjście
-    BNC
-    Masa testowa (TPGND)
-       
-## Pomiary - ostatnie zdjęcie
-    Zakres sweep: Start: 1 Hz Stop: 10 MHz
-    101 punktów
-    Skala logarytmiczna
+## ⚙️ Project Overview
 
-    Wzmocnienie nominalne ≈ -20 dB
-    Charakterystyka płaska do ~100 kHz
-    Niewielki spadek w okolicach kilku MHz
-    lekkie zafalowanie przesunięcia fazowego powyżej ~1 MHz
+Standard oscilloscope probes reference ground, which makes measuring floating or high-side signals dangerous or impossible.
 
+This differential probe solves that problem by:
 
-## TO DO
-    Wymiana czterech pojedynczych rezystoró na drabinkę firmy VISAY (problem z zakupem) i skalibrowanie sondy 
-    Wykonanie obudowy w twchnologi druku 3D pokrytej wewnątrz warstwą ekranującą
+- Providing true differential input (IN+ / IN−)
+- Using a precision resistor divider network
+- Amplifying the differential signal
+- Running from isolated battery supply (Li-Ion 3.7 V)
+- Outputting through BNC connector
+
+---
+
+## 📊 Measured Frequency Response
+
+Measurement performed using Digilent Discovery 3.
+
+**Sweep parameters:**
+- Start: 1 Hz  
+- Stop: 10 MHz  
+- 101 points  
+- Logarithmic scale  
+
+**Observed behavior:**
+- Nominal gain ≈ -20 dB  
+- Flat response up to ~100 kHz  
+- Gradual roll-off in MHz range  
+- Increasing phase shift above ~1 MHz  
+
+![Frequency Response](docs/analiza.jpg)
+
+---
+
+## 📷 Gallery
+
+### PCB – Bare Board
+
+![PCB Front](docs/01.jpg)
+![PCB Back](docs/02.jpg)
+
+### Assembly Progress
+
+![Stage 1](docs/03.jpg)
+![Stage 2](docs/04.jpg)
+![Stage 3](docs/05.jpg)
+![Stage 4](docs/06.jpg)
+
+### Final Assembly
+
+![Assembled Board](docs/07.jpg)
+![Completed Probe](docs/end.jpg)
+
+---
+
+## 🏗 Architecture
+
+### Input Stage
+- Differential IN+ / IN− terminals
+- High-voltage resistor divider
+- Input protection diodes
+- RC compensation network
+
+### Amplifier Stage
+- Differential operational amplifier
+- Precision matched resistors
+- Frequency compensation network
+
+### Power Supply
+- Li-Ion 3.7 V battery
+- DC/DC converter generating ±5 V
+- USB charging circuit
+- Input fuse protection
+
+### Output
+- BNC connector
+- Test ground (TPGND)
+
+---
+
+## 📐 Technical Parameters (Prototype)
+
+| Parameter | Value |
+|------------|--------|
+| Gain | ≈ -20 dB |
+| Flat Bandwidth | ~100 kHz |
+| Estimated -3 dB Bandwidth | ~ MHz range |
+| Power Supply | Li-Ion 3.7 V |
+| Output | BNC |
+| Input Type | Differential |
+
+*(Final values may vary depending on component selection and calibration.)*
+
+---
+
+## 🔋 Power System
+
+- Powered from single Li-Ion 3.7 V cell
+- On-board DC/DC generates symmetrical supply
+- USB charging capability
+- Isolated from measured circuit
+
+---
+
+## 🧪 Test Conditions
+
+The probe was tested for:
+
+- Frequency response (Bode plot)
+- Gain stability
+- Phase response
+- General stability under differential input conditions
+
+---
+
+## ⚠️ Safety Notice
+
+⚠ **WARNING – HIGH VOLTAGE DEVICE**
+
+This project is intended for experienced electronics users.
+
+- Always verify insulation distances.
+- Never operate without proper enclosure.
+- Do not exceed component voltage ratings.
+- Use only verified Li-Ion cells.
+- Double-check polarity before first power-up.
+
+The author assumes no responsibility for damage or injury caused by improper use.
+
+---
+
+## 📁 Repository Structure
+
+```
+.
+├── docs/
+│   ├── 01.jpg
+│   ├── 02.jpg
+│   ├── 03.jpg
+│   ├── 04.jpg
+│   ├── 05.jpg
+│   ├── 06.jpg
+│   ├── 07.jpg
+│   ├── end.jpg
+│   └── analiza.jpg
+├── hardware/
+│   ├── schematic.pdf
+│   ├── pcb_files/
+│   └── bom.csv
+└── README.md
+```
+
+---
+
+## 📌 Project Status
+
+✔ PCB designed  
+✔ Prototype assembled  
+✔ Frequency response measured  
+⬜ Bandwidth optimization  
+⬜ Enclosure design  
+⬜ Extended validation  
+
+---
+
+## 📜 License
+
+Open hardware project.  
+Add your preferred license here (MIT, CERN-OHL, GPL, etc.).
+
+---
+
+### Author
+
+DIY project by @jurekms
 
 ![01_R](https://github.com/user-attachments/assets/c2d3f26f-5859-4539-a1ce-6709016dfe67)
 
@@ -53,6 +196,6 @@
 
 ![07_R](https://github.com/user-attachments/assets/f837afd9-c343-4fc0-a5a7-75459c2d158f)
 
-![end_R](https://github.com/user-attachments/assets/f365f68d-db7b-4352-8972-7d8557295839)
 
-![analiza](https://github.com/user-attachments/assets/a4809e2c-fda0-4d3e-9fcd-f3e4a9625023)
+
+
